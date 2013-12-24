@@ -1,0 +1,61 @@
+{{!< default}}
+
+{{! The header when Index}}
+<header id="indexhead_willsong">
+	{{#if @blog.logo}}<a href="{{@blog.url}}"><img id="logo_willsong" src="{{@blog.logo}}" alt="{{@blog.title}}" /></a>
+		{{else}}<h1 id="blogname_willsong"><a href="{{@blog.url}}">{{@blog.title}}</a></h1>
+	{{/if}}
+	<div id="description_willsong" class="respowidth_willsong">
+		<h3>{{@blog.description}}</h3>
+	</div>
+</header>
+
+{{! MAIN content}}
+<section id="main_willsong" role="main">
+	<div id="articles_willsong" class="respowidth_willsong">
+
+	{{! The Index articles loop}}
+	{{#foreach posts}}
+		<article class="article_willsong" role="article" itemscope itemtype="http://schema.org/Article">
+
+			<div class="postdetails_willsong">
+				<span class="icon-clock"> </span> <time class="date_willsong" datetime="{{date format='dddd DD MMM YYYY'}}" itemprop="datePublished">{{date format='DD MMM YYYY'}}</time>
+				{{#if tags}}<p><span class="icon-tag"> </span> {{tags separator=", "}}</p>{{/if}}
+			</div><div class="mainright_willsong">
+				<h2 class="posttitle_willsong" itemprop="headline"><a href="{{{url}}}" rel="bookmark">{{title}}</a></h2>
+
+				<div class="lores_postdetails_willsong">
+					<span class="icon-clock"> </span> <time class="date_willsong" datetime="{{date format='dddd DD MMM YYYY'}}" itemprop="datePublished">{{date format='DD MMM YYYY'}}</time>{{#if tags}}<span class="icon-tag"> {{tags separator=", "}}</span>{{/if}}
+				</div>
+				
+				<div class="postcontent_willsong">
+					{{content words="80"}}
+				</div>
+				
+				<a href="{{{url}}}" class="readmore_willsong">Read More</a>
+			</div>
+				
+		</article>
+	{{/foreach}}
+
+	{{#if pagination}}
+		<div id="pagination_willsong">
+			{{{pagination}}}
+		</div>
+	{{/if}}
+	</div>
+
+	<aside class="bio">
+		<h3>@billwscott</h3>
+		<img class="bills_pic" src="assets/images/bill.jpg" />
+		<div id="socialmedia_willsong">
+			<a href="http://twitter.com/billwscott" class="sociallink_willsong"><span class="icon-twitter"></span></a>
+			<a href="http://www.linkedin.com/in/billwscott" class="sociallink_willsong"><span class="icon-linkedin"></span></a>
+			<a href="http://plus.google.com/112944605091918762808/posts" class="sociallink_willsong"><span class="icon-google-plus"></span></a>
+			<a href="https://github.com/billwscott" class="sociallink_willsong"><span class="icon-github"></span></a>
+			<a href="https://flickr.com/thescottclan" class="sociallink_willsong"><span class="icon-flickr"></span></a>
+			<a href="http://about.me/billwscott" class="sociallink_willsong"><span class="icon-user"></span></a>
+			<a href="http://looksgoodworkswell.ghost.io/rss/" class="sociallink_willsong"><span class="icon-feed"></span></a>
+		</div>
+	</aside>
+</section>
