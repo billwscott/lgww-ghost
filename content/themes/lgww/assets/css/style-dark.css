@@ -9,6 +9,11 @@ h4{font-size:1.6em}
 h5{font-size:1.4em}
 h6{font-size:1.2em}
 
+mark {
+	background-color: #FFFE68;
+	color:black;
+}
+
 aside.bio {padding: 0 20px;border-left:1px solid white;float:left;width:180px;font-family:'Roboto',sans-serif;font-size:18px/26px}
 img.bills_pic {width:160px;}
 h1,h2,h3,h4,h5,h6{color:#fff;font-family:'Poly',serif;font-weight:normal;line-height:1.4em}
